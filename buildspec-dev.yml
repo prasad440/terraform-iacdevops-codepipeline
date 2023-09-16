@@ -30,10 +30,10 @@ phases:
       - cd "$CODEBUILD_SRC_DIR/terraform-manifests"
       - ls -lrt "$CODEBUILD_SRC_DIR/terraform-manifests"
       - terraform --version
-      - terraform init -input=false 
+      - terraform init 
       - terraform validate
-      - terraform plan -lock=false         
-      - terraform $TF_COMMAND -input=false -auto-approve  
+      - terraform plan      
+      - terraform $TF_COMMAND -auto-approve  
   post_build:
     on-failure: CONTINUE   
     commands:
